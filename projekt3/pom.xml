@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>projekt</groupId>
+  <artifactId>projekt</artifactId>
+  <version>0.0.1-SNAPSHOT</version>  
+  <packaging>jar</packaging>
+  <dependencies>
+<dependency> 
+    <groupId>com.fasterxml.jackson.core</groupId> 
+    <artifactId>jackson-databind</artifactId>   
+    <version>2.13.1</version> 
+    
+    <exclusions>
+    <exclusion>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+    </exclusion>
+</exclusions> 
+</dependency>
+</dependencies>
+
+<build>
+<plugins>
+    <plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <configuration>
+        <archive>
+            <manifest>                 
+                <mainClass>/projekt3/src/main/java/projekt/FakeMain.java</mainClass>
+            </manifest>
+        </archive>
+        <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+    </configuration>
+   </plugin>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>16.0.1</source>
+          <target>16.0.1</target>
+        </configuration>
+      </plugin>
+
+
+</plugins>
+
+</build>
+
+  
+</project>
+
+
